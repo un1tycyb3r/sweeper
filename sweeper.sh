@@ -11,7 +11,7 @@ else
 
 for x in `seq 1 126`; do
 
-ping -c 1 $1.$x | grep 64
+ping -c 1 $1.$x | grep '64 bytes' | cut -d" " -f4 | sed 's/.$//'
 
 done
 
